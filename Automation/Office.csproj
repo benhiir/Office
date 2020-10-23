@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0869ED79-17E9-45D1-AA64-E6475D64D797}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Automation</RootNamespace>
+    <AssemblyName>Automation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>user.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.4.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\iman\C#\click site\automation_part8\EF_Dll\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\iman\C#\click site\automation_part8\EF_Dll\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PersianDate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PersianDate\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PopupControl">
+      <HintPath>D:\iman\C#\click site\automation_part10\PersianDate\PopupControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2015.1.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_panel\frm_addSystemPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_addSystemPart.Designer.cs">
+      <DependentUpon>frm_addSystemPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_add_edit_Jobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_add_edit_Jobs.Designer.cs">
+      <DependentUpon>Frm_add_edit_Jobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_changePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_changePassword.Designer.cs">
+      <DependentUpon>Frm_changePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_CreateNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_CreateNews.Designer.cs">
+      <DependentUpon>Frm_CreateNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_JobsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_JobsHistory.Designer.cs">
+      <DependentUpon>Frm_JobsHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_SabteDastresi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_SabteDastresi.Designer.cs">
+      <DependentUpon>frm_SabteDastresi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_sendSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\Frm_sendSMS.Designer.cs">
+      <DependentUpon>Frm_sendSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_setJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_setJobs.Designer.cs">
+      <DependentUpon>frm_setJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_setServerParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_setServerParameters.Designer.cs">
+      <DependentUpon>frm_setServerParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showAllNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showAllNews.Designer.cs">
+      <DependentUpon>frm_showAllNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showJobs.Designer.cs">
+      <DependentUpon>frm_showJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_ControlEnterExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_ControlEnterExit.Designer.cs">
+      <DependentUpon>frm_ControlEnterExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_AddRemember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_AddRemember.Designer.cs">
+      <DependentUpon>frm_AddRemember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_add_edit_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_add_edit_user.Designer.cs">
+      <DependentUpon>frm_add_edit_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_mainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_mainAdmin.Designer.cs">
+      <DependentUpon>frm_mainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showRecievedSupports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showRecievedSupports.Designer.cs">
+      <DependentUpon>frm_showRecievedSupports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_ShowSystemParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_ShowSystemParts.Designer.cs">
+      <DependentUpon>frm_ShowSystemParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_ShowUser forJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_ShowUser forJob.Designer.cs">
+      <DependentUpon>frm_ShowUser forJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showUserInfo.Designer.cs">
+      <DependentUpon>frm_showUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_panel\frm_showUsers.Designer.cs">
+      <DependentUpon>frm_showUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editor\AdvancedTextEditorControl\AdvancedTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editor\AdvancedTextEditorControl\AdvancedTextEditor.Designer.cs">
+      <DependentUpon>AdvancedTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editor\AdvancedTextEditorControl\FontComboBoxControl\FontComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="editor\Dialogs\dlgFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editor\Dialogs\dlgFind.Designer.cs">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editor\ExtendedRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="editor\TextRulerControl\TextRuler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modula\CryptionAlgorithm.cs" />
+    <Compile Include="modula\PublicVariable.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users_panel\Frm_changePasswordByUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_changePasswordByUser.Designer.cs">
+      <DependentUpon>Frm_changePasswordByUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_craeteNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_craeteNote.Designer.cs">
+      <DependentUpon>Frm_craeteNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_CreateLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_CreateLetter.Designer.cs">
+      <DependentUpon>Frm_CreateLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_createSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_createSupport.Designer.cs">
+      <DependentUpon>Frm_createSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_documents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_documents.Designer.cs">
+      <DependentUpon>Frm_documents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_foriLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_foriLetters.Designer.cs">
+      <DependentUpon>Frm_foriLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_gardesheName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_gardesheName.Designer.cs">
+      <DependentUpon>frm_gardesheName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_RecieveAllLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_RecieveAllLetters.Designer.cs">
+      <DependentUpon>frm_RecieveAllLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_sabteKarkard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_sabteKarkard.Designer.cs">
+      <DependentUpon>frm_sabteKarkard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_SelectUserToSendLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_SelectUserToSendLetter.Designer.cs">
+      <DependentUpon>Frm_SelectUserToSendLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_sendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_sendEmail.Designer.cs">
+      <DependentUpon>Frm_sendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_SentLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_SentLetters.Designer.cs">
+      <DependentUpon>Frm_SentLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllMahramane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllMahramane.Designer.cs">
+      <DependentUpon>Frm_showAllMahramane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_ShowAllnewsforUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_ShowAllnewsforUser.Designer.cs">
+      <DependentUpon>frm_ShowAllnewsforUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllNotReadLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllNotReadLetters.Designer.cs">
+      <DependentUpon>Frm_showAllNotReadLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_ShowAllPeygiryLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_ShowAllPeygiryLetters.Designer.cs">
+      <DependentUpon>frm_ShowAllPeygiryLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllReadLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllReadLetters.Designer.cs">
+      <DependentUpon>Frm_showAllReadLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_showAllRecievedReferenceLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_showAllRecievedReferenceLetters.Designer.cs">
+      <DependentUpon>frm_showAllRecievedReferenceLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllRecieveNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_showAllRecieveNote.Designer.cs">
+      <DependentUpon>Frm_showAllRecieveNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_ShowAllSentReferenceLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_ShowAllSentReferenceLetters.Designer.cs">
+      <DependentUpon>frm_ShowAllSentReferenceLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_ShowDraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_ShowDraft.Designer.cs">
+      <DependentUpon>Frm_ShowDraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_addRemember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_addRemember.Designer.cs">
+      <DependentUpon>frm_addRemember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_MainUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_MainUser.Designer.cs">
+      <DependentUpon>frm_MainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_showKarkard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_showKarkard.Designer.cs">
+      <DependentUpon>frm_showKarkard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_showMatnNews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_showMatnNews.Designer.cs">
+      <DependentUpon>frm_showMatnNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\frm_showNewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\frm_showNewMessage.Designer.cs">
+      <DependentUpon>frm_showNewMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_ShowRemembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_ShowRemembers.Designer.cs">
+      <DependentUpon>Frm_ShowRemembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users_panel\Frm_ShowSentNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_panel\Frm_ShowSentNote.Designer.cs">
+      <DependentUpon>Frm_ShowSentNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SendMessageWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin_panel\frm_addSystemPart.resx">
+      <DependentUpon>frm_addSystemPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\Frm_add_edit_Jobs.resx">
+      <DependentUpon>Frm_add_edit_Jobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\Frm_changePassword.resx">
+      <DependentUpon>Frm_changePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_ControlEnterExit.resx">
+      <DependentUpon>frm_ControlEnterExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_AddRemember.resx">
+      <DependentUpon>frm_AddRemember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_add_edit_user.resx">
+      <DependentUpon>frm_add_edit_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\Frm_CreateNews.resx">
+      <DependentUpon>Frm_CreateNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\Frm_JobsHistory.resx">
+      <DependentUpon>Frm_JobsHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_mainAdmin.resx">
+      <DependentUpon>frm_mainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_SabteDastresi.resx">
+      <DependentUpon>frm_SabteDastresi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\Frm_sendSMS.resx">
+      <DependentUpon>Frm_sendSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_setJobs.resx">
+      <DependentUpon>frm_setJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_setServerParameters.resx">
+      <DependentUpon>frm_setServerParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_showAllNews.resx">
+      <DependentUpon>frm_showAllNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_showJobs.resx">
+      <DependentUpon>frm_showJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_showRecievedSupports.resx">
+      <DependentUpon>frm_showRecievedSupports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_ShowSystemParts.resx">
+      <DependentUpon>frm_ShowSystemParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_ShowUser forJob.resx">
+      <DependentUpon>frm_ShowUser forJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_showUserInfo.resx">
+      <DependentUpon>frm_showUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_panel\frm_showUsers.resx">
+      <DependentUpon>frm_showUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editor\AdvancedTextEditorControl\AdvancedTextEditor.resx">
+      <DependentUpon>AdvancedTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editor\Dialogs\dlgFind.resx">
+      <DependentUpon>dlgFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_changePasswordByUser.resx">
+      <DependentUpon>Frm_changePasswordByUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_craeteNote.resx">
+      <DependentUpon>Frm_craeteNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_CreateLetter.resx">
+      <DependentUpon>Frm_CreateLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_createSupport.resx">
+      <DependentUpon>Frm_createSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_documents.resx">
+      <DependentUpon>Frm_documents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_foriLetters.resx">
+      <DependentUpon>Frm_foriLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_gardesheName.resx">
+      <DependentUpon>frm_gardesheName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_RecieveAllLetters.resx">
+      <DependentUpon>frm_RecieveAllLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_sabteKarkard.resx">
+      <DependentUpon>frm_sabteKarkard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_SelectUserToSendLetter.resx">
+      <DependentUpon>Frm_SelectUserToSendLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_sendEmail.resx">
+      <DependentUpon>Frm_sendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_SentLetters.resx">
+      <DependentUpon>Frm_SentLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_showAllMahramane.resx">
+      <DependentUpon>Frm_showAllMahramane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_ShowAllnewsforUser.resx">
+      <DependentUpon>frm_ShowAllnewsforUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_showAllNotReadLetters.resx">
+      <DependentUpon>Frm_showAllNotReadLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_ShowAllPeygiryLetters.resx">
+      <DependentUpon>frm_ShowAllPeygiryLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_showAllReadLetters.resx">
+      <DependentUpon>Frm_showAllReadLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_showAllRecievedReferenceLetters.resx">
+      <DependentUpon>frm_showAllRecievedReferenceLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_showAllRecieveNote.resx">
+      <DependentUpon>Frm_showAllRecieveNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_ShowAllSentReferenceLetters.resx">
+      <DependentUpon>frm_ShowAllSentReferenceLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_ShowDraft.resx">
+      <DependentUpon>Frm_ShowDraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_addRemember.resx">
+      <DependentUpon>frm_addRemember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_MainUser.resx">
+      <DependentUpon>frm_MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_showKarkard.resx">
+      <DependentUpon>frm_showKarkard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_showMatnNews.resx">
+      <DependentUpon>frm_showMatnNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\frm_showNewMessage.resx">
+      <DependentUpon>frm_showNewMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_ShowRemembers.resx">
+      <DependentUpon>Frm_ShowRemembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_panel\Frm_ShowSentNote.resx">
+      <DependentUpon>Frm_ShowSentNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="img\users.png" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\SendMessageWebService\AllMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\Branch.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\ReceivedMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SendMessageWebService\ScheduleSend.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SendReceive.wsdl" />
+    <None Include="Web References\SendMessageWebService\SendToBranchFilterConditions.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SendToBranchSendMethod.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SentMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SentSmsDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\SMSLineNumber.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SendMessageWebService\TrashedMessage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="editor\Resources\l_indent_pos_lower.png" />
+    <Content Include="editor\Resources\l_indet_pos_upper.png" />
+    <Content Include="editor\Resources\r_indent_pos.png" />
+    <Content Include="editor\Resources\tab_pos.png" />
+    <Content Include="img\alarm.png" />
+    <Content Include="user.ico" />
+    <None Include="Web References\SendMessageWebService\SendReceive.disco" />
+    <None Include="img\archive-icon.png" />
+    <Content Include="img\Apps-system-software-update-icon.png" />
+    <Content Include="img\editLetter.ico" />
+    <Content Include="img\entesab.png" />
+    <Content Include="img\jobmanage.png" />
+    <Content Include="img\jobs.png" />
+    <Content Include="img\Keys-icon.png" />
+    <Content Include="img\login-icon-png-20.png" />
+    <Content Include="img\login.jpg" />
+    <Content Include="img\mailbox-icon.png" />
+    <Content Include="img\mailbox-message-received-icon.png" />
+    <Content Include="img\MailBox1-icon.png" />
+    <Content Include="img\Megaphone-Speaker-icon.png" />
+    <Content Include="img\message.png" />
+    <Content Include="img\Start-Menu-Search-icon.png" />
+    <Content Include="img\user.ico" />
+    <None Include="img\Mimetypes-application-pgp-signature-icon.png" />
+    <Content Include="img\search-icon.png" />
+    <None Include="img\User-blue-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataModelLayer\DataModelLayer.csproj">
+      <Project>{dd63f01d-6e26-4ef7-ad83-be9307084b78}</Project>
+      <Name>DataModelLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ip.sms.ir/ws/SendReceive.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SendMessageWebService\</RelPath>
+      <UpdateFromURL>http://ip.sms.ir/ws/SendReceive.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Automation_SendMessageWebService_SendReceive</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
